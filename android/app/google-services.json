@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "447259881190",
+    "firebase_url": "https://royal-court-bd-e-commerce.firebaseio.com",
+    "project_id": "royal-court-bd-e-commerce",
+    "storage_bucket": "royal-court-bd-e-commerce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:447259881190:android:f926a4d8d466c9a4145527",
+        "android_client_info": {
+          "package_name": "com.royalcourtbd.the_royal_player"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "447259881190-nuf772rke83ov8s8oh4v5jdcj3l2tlb0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLIHCR3HGdlxp00yatzzT4xtYfEO8LBsU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "447259881190-nuf772rke83ov8s8oh4v5jdcj3l2tlb0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
