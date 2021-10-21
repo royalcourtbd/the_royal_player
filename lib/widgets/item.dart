@@ -30,7 +30,7 @@ class _ProductItemState extends State<ProductItem> {
             },
             child: Container(
               height: MediaQuery.of(context).size.height,
-              width: 200,
+              width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 color: widget.matchFound.color,
                 borderRadius: BorderRadius.circular(11.0),
@@ -51,8 +51,10 @@ class _ProductItemState extends State<ProductItem> {
             ),
           ),
           Positioned(
-            top: screenHeight / 11,
-            left: screenWidth / 29,
+            //top: screenHeight / 11,
+            //left: screenWidth / 29,
+            top: 75,
+            left: 15,
             child: Text(
               widget.matchFound.gameName,
               style:
@@ -60,16 +62,20 @@ class _ProductItemState extends State<ProductItem> {
             ),
           ),
           Positioned(
-            top: screenHeight / 8.6,
-            left: screenWidth / 29,
+            top: 95,
+            left: 15,
+            // top: screenHeight / 8.6,
+            // left: screenWidth / 29,
             child: Text(
               widget.matchFound.gameType,
               style: GoogleFonts.arvo(),
             ),
           ),
           Positioned(
-            top: screenHeight / 7,
-            left: screenWidth / 29,
+            top: 115,
+            left: 15,
+            // top: screenHeight / 7,
+            // left: screenWidth / 29,
             child: Text(
               '$totalMatch ' + widget.matchFound.matchCount,
               style: GoogleFonts.arvo(),

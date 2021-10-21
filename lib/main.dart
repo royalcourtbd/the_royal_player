@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:the_royal_player/screens/home.dart';
+import 'package:the_royal_player/screens/wellet.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,8 +22,8 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      //home: WalletScreen(),
-      home: HomePage(),
+      home: Wallet(),
+      //home: HomePage(),
     );
   }
 }

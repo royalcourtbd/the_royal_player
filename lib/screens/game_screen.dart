@@ -101,7 +101,10 @@ class _GameScreenState extends State<GameScreen> {
             shrinkWrap: true,
             itemCount: foundMatch.length,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2, crossAxisSpacing: 5, mainAxisSpacing: 5),
+              crossAxisCount: 2,
+              crossAxisSpacing: 5,
+              mainAxisSpacing: 5,
+            ),
             itemBuilder: (context, index) {
               return ProductItem(
                 foundMatch[index],

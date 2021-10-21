@@ -19,7 +19,7 @@ class _GotMatchState extends State<GotMatch> {
     var screenWidth = MediaQuery.of(context).size.width;
 
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8),
       child: Container(
         height: screenHeight / 2.8,
         width: screenWidth,
@@ -43,7 +43,7 @@ class _GotMatchState extends State<GotMatch> {
                       ),
                     ),
                     child: CircleAvatar(
-                      maxRadius: 30,
+                      maxRadius: screenHeight / 27,
                       backgroundImage: NetworkImage(widget.matchDetail.image),
                     ),
                   ),

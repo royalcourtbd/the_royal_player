@@ -1,30 +1,41 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-import 'package:intl/intl.dart';
-
-class WalletScreen extends StatefulWidget {
-  final dateStr = 'August 6, 2020 at 5:44:45 PM UTC+7';
-  final formatter = DateFormat(r'''MMMM dd, yyyy 'at' hh:mm:ss a Z''');
-
-  //final dateTimeFromStr = formatter.parse(dateStr);
-  // print(dateTimeFromStr);
+class Wallet extends StatefulWidget {
+  const Wallet({Key? key}) : super(key: key);
 
   @override
-  _WelletScreenState createState() => _WelletScreenState();
+  _WalletState createState() => _WalletState();
 }
 
-class _WelletScreenState extends State<WalletScreen> {
+class _WalletState extends State<Wallet> {
+  final Stream<QuerySnapshot> _usersStream =
+      FirebaseFirestore.instance.collection('users').snapshots();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.deepPurple.shade100,
-      body: Center(
-        child: Text(
-          'Wallet',
-          style: GoogleFonts.lobster(fontSize: 25),
-        ),
-      ),
+    return StreamBuilder<QuerySnapshot>(
+      stream: _usersStream,
+      builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+        if (snapshot.hasError) {
+          return Text('error');
+        }
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return Text("Loading");
+        }
+        return ListView(
+          children: snapshot.data!.docs.map((DocumentSnapshot document) {
+            Map<String, dynamic> data =
+                document.data()! as Map<String, dynamic>;
+            return ListTile(
+              title: Text(
+                data['full_name'],
+              ),
+              subtitle: Text(data['wife_name']),
+            );
+          }).toList(),
+        );
+      },
     );
   }
 }
