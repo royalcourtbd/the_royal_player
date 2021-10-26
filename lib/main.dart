@@ -22,8 +22,8 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Wallet(),
-      //home: HomePage(),
+      //home: Wallet(),
+      home: HomePage(),
     );
   }
 }
